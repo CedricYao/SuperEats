@@ -20,13 +20,13 @@ namespace SuperEats.IntegrationTests.V1.Controllers.ValuesController
             }
 
             [Fact]
-            public async Task Should_return_bad_request_response_on_validation_error()
+            public void Should_return_bad_request_response_on_validation_error()
             {
                 response.StatusCode.ToString().Should().Be("BadRequest");
             }
 
             [Fact]
-            public async Task Should_return_corrent_validation_errors_on_validation_error()
+            public void Should_return_corrent_validation_errors_on_validation_error()
             {
                 response.Content.ReadAsStringAsync().Result.Should().MatchRegex("{\"Message\":\"Validation failed: (\\\\r\\\\n?|\\\\n) -- Param1: Param1 must be 8 digit number\"}");
             }

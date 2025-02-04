@@ -7,6 +7,8 @@ namespace SuperEats.IoC
     {
         protected override void Load(ContainerBuilder builder)
         {
+            var restaurantRepo = new RestaurantRepository();
+            builder.RegisterInstance(restaurantRepo).As<IRestaurantRepository>();
         }
     }
 }

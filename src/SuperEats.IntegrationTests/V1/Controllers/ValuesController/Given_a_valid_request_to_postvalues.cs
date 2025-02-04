@@ -24,19 +24,19 @@ namespace SuperEats.IntegrationTests.V1.Controllers.ValuesController
             }
 
             [Fact]
-            public async Task Should_be_success()
+            public void Should_be_success()
             {
                 response.EnsureSuccessStatusCode();
             }
 
             [Fact]
-            public async Task Should_have_correct_headers()
+            public void Should_have_correct_headers()
             {
                 response.Content.Headers.ContentType.ToString().Should().Be("application/json; charset=utf-8");
             }
 
             [Fact]
-            public async Task Should_have_correct_response()
+            public void Should_have_correct_response()
             {
                 response.Content.ReadAsStringAsync().Result.Should().Be("{\"resultParam1\":\"123\",\"resultParam2\":\"123456\"}");
             }
