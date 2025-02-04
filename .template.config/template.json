@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "cyao, ajaganathan, acvwilson, Pivotal",
+  "classifications": [ "PCF", "WebAPI", "Web"],
+  "identity": "SuperEats",
+  "name": "PCF Ready ASP.NET Core WebAPI",
+  "tags": {
+      "language": "C#"
+  },
+  "sourceName": "SuperEats",
+  "preferNameDirectory": true,
+  "shortName": "pvtlwebapi"
+}
+

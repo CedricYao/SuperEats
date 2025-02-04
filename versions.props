@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+    <TargetFrameworkApp>net8.0</TargetFrameworkApp>
+    <MicrosoftAspNetCoreVersion>6.0.0</MicrosoftAspNetCoreVersion>
+    <MicrosoftAspNetCoreMvcTestingVersion>8.0.12</MicrosoftAspNetCoreMvcTestingVersion>
+    <MicrosoftAspNetCoreMvcVersioningVersion>5.0.0</MicrosoftAspNetCoreMvcVersioningVersion>
+    <MicrosoftAspNetCoreStaticFilesVersion>2.2.0</MicrosoftAspNetCoreStaticFilesVersion>
+    <MicrosoftExtensionsPlatformAbstractionsVersion>1.1.0</MicrosoftExtensionsPlatformAbstractionsVersion>
+    <MicrosoftTestSdkVersion>16.5.0</MicrosoftTestSdkVersion>
+    <SteeltoeVersion>3.2.8</SteeltoeVersion>
+    <FluentValidationVersion>8.6.1</FluentValidationVersion>
+    <MediatRVersion>8.0.0</MediatRVersion>
+    <NetEscapadesVersion>2.0.0</NetEscapadesVersion>
+    <SwashbuckleVersion>5.0.0</SwashbuckleVersion>
+    <XunitVersion>2.4.1</XunitVersion>
+    <MoqVersion>4.17.2</MoqVersion>
+  </PropertyGroup>
+</Project>
