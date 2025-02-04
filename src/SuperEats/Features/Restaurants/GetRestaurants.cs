@@ -29,7 +29,8 @@ namespace SuperEats.Features.Restaurants
                         RestaurantId = r.RestaurantId,
                         Name = r.Name,
                         Cuisine = r.Cuisine,
-                        OperatingHours = r.OperatingHours
+                        OperatingHours = r.OperatingHours,
+                        IsLastHourDeal = r.IsLastHourDeal
                     }).ToList()
                 };
             }
@@ -50,6 +51,7 @@ namespace SuperEats.Features.Restaurants
             public string Name { get; set; } = string.Empty;
             public string? Cuisine { get; set; }
             public string? OperatingHours { get; set; }
+            public bool IsLastHourDeal { get; set; }
         }
     }
 }

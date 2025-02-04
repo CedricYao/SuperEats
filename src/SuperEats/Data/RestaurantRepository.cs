@@ -60,6 +60,18 @@ public class RestaurantRepository : IRestaurantRepository
         _restaurants.TryRemove(restaurantId, out Restaurant restaurant);
         return Task.CompletedTask;
     }
+
+     public Task UpdateRestaurantLastHourDeal(int restaurantId, bool isLastHourDeal)
+    {
+        _restaurants.TryGetValue(restaurantId, out var restaurant);
+        if (restaurant != null)
+        {
+            restaurant.IsLastHourDeal = isLastHourDeal;
+            _restaurants.TryUpdate(restaurantId, restaurant, restaurant);
+        }
+
+        return Task.CompletedTask;
+    }
 }
 
 public interface IRestaurantRepository
@@ -69,4 +81,6 @@ public interface IRestaurantRepository
     Task AddRestaurantAsync(Restaurant restaurant);
     Task UpdateRestaurantAsync(Restaurant restaurant);
     Task DeleteRestaurantAsync(int restaurantId);
+    Task UpdateRestaurantLastHourDeal(int restaurantId, bool isLastHourDeal);
+}
 }

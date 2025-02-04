@@ -164,5 +164,37 @@ namespace SuperEats.UnitTests.Data
              allRestaurants.Count().Should().Be(2);
         }
 
+         [Fact]
+        public async Task UpdateRestaurantLastHourDeal_ExistingRestaurant_UpdatesIsLastHourDeal()
+        {
+            // Arrange
+            var repository = new RestaurantRepository();
+            int existingRestaurantId = 1;
+            bool isLastHourDeal = true;
+           
+             //Act
+             await repository.UpdateRestaurantLastHourDeal(existingRestaurantId, isLastHourDeal);
+            var restaurant = await repository.GetByIdAsync(existingRestaurantId);
+
+             // Assert
+            restaurant.Should().NotBeNull();
+            restaurant.IsLastHourDeal.Should().Be(isLastHourDeal);
+        }
+
+        [Fact]
+         public async Task UpdateRestaurantLastHourDeal_NonExistingRestaurant_DoesNotUpdateIsLastHourDeal()
+         {
+            // Arrange
+            var repository = new RestaurantRepository();
+            int nonExistingRestaurantId = 99;
+            bool isLastHourDeal = true;
+           
+             //Act
+             await repository.UpdateRestaurantLastHourDeal(nonExistingRestaurantId, isLastHourDeal);
+            var restaurant = await repository.GetByIdAsync(nonExistingRestaurantId);
+
+             // Assert
+            restaurant.Should().BeNull();
+        }
     }
 }

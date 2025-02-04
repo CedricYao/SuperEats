@@ -16,4 +16,5 @@ public class Restaurant
     public string? OperatingHours { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
+    public bool IsLastHourDeal {get; set;} = false;
 }

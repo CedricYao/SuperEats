@@ -66,6 +66,39 @@ namespace SuperEats.IntegrationTests.V1.Controllers.RestaurantController
                 actualResponse.Should().BeEquivalentTo(expectedResponse);
                 
             }
+
+             [Fact]
+            public void Should_have_last_hour_deal_badge()
+            {
+                var expectedResponse = new GetRestaurants.Response
+                {
+                    RestaurantDetails = new List<GetRestaurants.RestaurantDetails>
+                    {
+                        new GetRestaurants.RestaurantDetails
+                        {
+                            RestaurantId = 1,
+                            Name = "Pizza Place",
+                            Cuisine = "Italian",
+                            OperatingHours = "11:00 AM - 10:00 PM",
+                            IsLastHourDeal = true
+                        },
+                         new GetRestaurants.RestaurantDetails
+                        {
+                            RestaurantId = 2,
+                            Name = "Burger Joint",
+                            Cuisine = "American",
+                            OperatingHours = "10:00 AM - 9:00 PM",
+                            IsLastHourDeal = false
+                         }
+                    }
+                };
+                
+                var content = response.Content.ReadAsStringAsync().Result;
+                var actualResponse = JsonConvert.DeserializeObject<GetRestaurants.Response>(content);
+
+                actualResponse.Should().BeEquivalentTo(expectedResponse);
+                
+            }
         }
     }
 }
